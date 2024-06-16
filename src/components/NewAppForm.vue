@@ -223,11 +223,21 @@ import Dialog from 'primevue/dialog';
                         field.NameAsProperty = field.Name.toLowerCase().replace(/ /g,"_");
 
                         if (field.Type == 'itemRelation') {
+                            console.log(field)
+                            var relWsId = ''
+                            this.environment.workspaces.forEach((ws) => {
+                                ws.apps.forEach((app) => {
+                                    if (field.AppRelation.id == app.id){
+                                        relWsId = ws.id;
+                                    }
+                                })
+                            })
                             var fixField = {
                                 id: "",
                                 name: field.Name,
                                 nameAsProperty: field.NameAsProperty,
                                 type: field.Type,
+                                workspaceRelationId: relWsId,
                                 appRelationId: field.AppRelation.id,
                                 appRelationName: field.AppRelation.appName
                             }

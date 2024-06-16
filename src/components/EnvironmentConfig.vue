@@ -20,7 +20,7 @@
                 </div>
                 
                 <div class="row mt-3" style="overflow-y: auto; max-height: 30%;">
-                    <table :class="'txt-'+colorMode" id="usersList" class="table table-hover text-center">
+                    <table :class="'txt-'+colorMode+' bsec-'+colorMode" id="usersList" class="table table-hover text-center">
                         <thead class="thead-greenish">
                             <tr>
                                 <th scope="col">#</th>

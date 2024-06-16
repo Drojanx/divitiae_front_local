@@ -55,17 +55,17 @@
                             <button v-if="editRelationField == relationField.id" @click="modifyRelated(relationField.id, index, $event)" class="bg-warning rounded px-2 py-1">Accept</button>
                         </div>
                         <div v-if="editRelationField != relationField.id" class="w-80 py-2 itemDetailValue related-items-grid"> 
-                            <div v-for="relation in stateItemDetail.relationFields[relationField.id].relatedItems" >
-                                <RouterLink @click="loadRelatedItem(relationField.appRelationId, relation.relatedItemId)" :to="{ name: 'item', params: { environmentNameURL: this.environment.environmentNameURL, workspaceNameURL: this.stateWorkspace.workspaceNameURL, appNameURL: stateApp.appNameURL, itemId: relation.relatedItemId}}"> 
-                                    <div class="h-100 relationFieldCard">
-                                        <span class="relation-field-header">{{ relation.relatedItemName }}</span>
-                                        <div class="pt-2">
-                                            <a >{{ relationField.name }}</a>
-                                            <p class="related-id-text">ID: {{ relation.relatedItemId }}</p>
+                                <div v-for="relation in stateItemDetail.relationFields[relationField.id].relatedItems" >
+                                    <RouterLink @click="loadRelatedItem(relationField.appRelationId, relation.relatedItemId)" :to="{ name: 'item', params: { environmentNameURL: this.environment.environmentNameURL, workspaceNameURL: stateItemDetail.relationFields[relationField.id].workspaceNameURL, appNameURL: stateItemDetail.relationFields[relationField.id].appNameURL, itemId: relation.relatedItemId}}"> 
+                                        <div class="h-100 relationFieldCard">
+                                            <span class="relation-field-header">{{ relation.relatedItemName }}</span>
+                                            <div class="pt-2">
+                                                <a >{{ relationField.name }}</a>
+                                                <p class="related-id-text">ID: {{ relation.relatedItemId }}</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </RouterLink>
-                            </div>
+                                    </RouterLink>
+                                </div>
                         </div>
                         <div v-if="editRelationField == relationField.id" class="w-80 py-2 item-detail-value"> 
                             <Chips v-model="selectedItems[index]">
@@ -85,14 +85,14 @@
                         <h5>Related Items</h5>
                         <div v-for="(relationData, propertyName) in stateItemDetail.relatedItemsByAppId" :key="propertyName" class="d-flex justify-content-between">
                             <div class="pw-20 py-2 item-detail-key text-end">
-                                <span> {{ relationData.relatedAppName }}</span>
+                                <span> {{ relationData.appName }}</span>
                                 </div>
                                 <div class="w-80 py-2 itemDetailValue related-items-grid">
                                     <div v-for="relatedItem in relationData.relatedItems" class="relationFieldCard mb-1" @click="loadRelatedItem(propertyName, relatedItem.relatedItemId)">
-                                        <RouterLink :to="{ name: 'item', params: { environmentNameURL: this.environment.environmentNameURL, workspaceNameURL: this.stateWorkspace.workspaceNameURL, appNameURL: stateApp.appNameURL, itemId: relatedItem.relatedItemId}}">
+                                        <RouterLink :to="{ name: 'item', params: { environmentNameURL: this.environment.environmentNameURL, workspaceNameURL: relationData.workspaceNameURL, appNameURL: relationData.appNameURL, itemId: relatedItem.relatedItemId}}">
                                             <span class="relation-field-header" v-tooltip="{ value: relatedItem.relatedItemName, showDelay: 150, hideDelay: 200 }">{{ relatedItem.relatedItemName }}</span>
                                             <div class="pt-2">
-                                                <a>{{ relationData.relatedAppName }}</a>
+                                                <a>{{ relationData.appName }}</a>
                                                 <p class="related-id-text">ID: {{ relatedItem.relatedItemId }}</p>
                                             </div>
                                         </RouterLink>

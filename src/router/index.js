@@ -110,7 +110,6 @@ async function getEnvironment(environmentNameURL, to, next) {
           } else {
             existingNames[nombreUrlFriendly] = 1;
           }
-          
           ws.workspaceNameURL = nombreUrlFriendly;
 
           let existingAppNames = {}
@@ -284,6 +283,7 @@ async function fixItem(item){
     relationFields: {},
     relatedItemsByAppId: {}
   }
+  //console.log(item)
   var fixedValues = {};
   var fixedRelationValues = {};
   item.fieldsValue.forEach((value) => {
@@ -306,11 +306,31 @@ async function fixItem(item){
       fixedRelationValues[`${relationValue.id}`] = {};
       //Luego, crea una lista relatedItems
       fixedRelationValues[`${relationValue.id}`]['relatedItems'] = [];
+      fixedRelationValues[`${relationValue.id}`]['appNameURL'] = '';
+      fixedRelationValues[`${relationValue.id}`]['workspaceNameURL'] = '';
     }
 
+    console.log("aqui")
+    console.log(item)
     relationValue.value.relatedItems.forEach((value) => {
       //Almacena el valor de la relación en la lista relatedItems
       fixedRelationValues[`${relationValue.id}`]['relatedItems'].push(value);
+      var appURL = ''
+      createStore.getters.environment.workspaces.forEach((ws) => {
+        ws.apps.forEach((app) => {
+          console.log(app.id)
+          console.log(relationValue.value.relatedAppId)
+          if (app.id == relationValue.value.relatedAppId){
+            appURL = app.appNameURL;
+          }
+        })
+      })
+      console.log(appURL)
+      fixedRelationValues[`${relationValue.id}`]['appNameURL'] = appURL;
+      console.log("hola")
+      var wsURL = createStore.getters.environment.workspaces.find((ws) => ws.id == relationValue.value.relatedWorkspaceId).workspaceNameURL;
+      console.log("hola")
+      fixedRelationValues[`${relationValue.id}`]['workspaceNameURL'] = wsURL;
     })
   })
 
@@ -323,16 +343,37 @@ async function fixItem(item){
   item.relations.forEach((relation) => {
       
       const { relatedAppId } = relation;
-
-      var relatedAppName = createStore.getters.stateWorkspace.apps.find((app) => app.id == relation.relatedAppId).appName;
+      var relatedWorkspaceNameURL = '';
+      createStore.getters.environment.workspaces.forEach((ws) => {
+        ws.apps.forEach((app)=> {
+          if (app.id == relation.relatedAppId){
+            relatedWorkspaceNameURL = ws.workspaceNameURL;
+          }
+        })
+      });
+      var appURL = '';
+      createStore.getters.environment.workspaces.forEach(ws => {
+        ws.apps.forEach(app => {
+          if (app.id == relation.relatedAppId){
+            appURL = app.appNameURL;
+          }
+        })
+      })
+      //var relatedAppName = createStore.getters.stateWorkspace.apps.find((app) => app.id == relation.relatedAppId).appName;
       
       if (!fixedItem.relatedItemsByAppId[relatedAppId]) {
           // Si la lista para 'relatedAppId' no existe, crea una nueva.
           fixedItem.relatedItemsByAppId[relatedAppId] = {};
           fixedItem.relatedItemsByAppId[relatedAppId]['relatedItems'] = [];
+          fixedItem.relatedItemsByAppId[relatedAppId]['appName'] = '';
+          fixedItem.relatedItemsByAppId[relatedAppId]['appNameURL'] = '';
+          fixedItem.relatedItemsByAppId[relatedAppId]['workspaceNameURL'] = '';
       }
 
-      fixedItem.relatedItemsByAppId[relatedAppId]['relatedAppName'] = relatedAppName
+      fixedItem.relatedItemsByAppId[relatedAppId]['appNameURL'] = appURL;
+      fixedItem.relatedItemsByAppId[relatedAppId]['appName'] = relation.relatedAppName;
+      //var wsURL = createStore.getters.environment.workspaces.find((ws) => ws.id == relation.relatedWorkspaceId).workspaceNameURL;
+      fixedItem.relatedItemsByAppId[relatedAppId]['workspaceNameURL'] = relatedWorkspaceNameURL;
       
       relation.relatedItems.forEach((relatedItem) => {
         var fixedRelatedItem = {
@@ -348,6 +389,7 @@ async function fixItem(item){
 }
 
 async function getItem(itemId, to){
+      console.log("hola")
   let loader = show({
     color: "#ffc107",
     width: 80,
@@ -361,7 +403,7 @@ async function getItem(itemId, to){
   item ? createStore.dispatch('stateItemDetail', item) :
    await axios.get(`app/${app.id}/item/${itemId}`)
     .then(async (response) => {
-
+      console.log(await fixItem(response.data))
       createStore.dispatch('stateItemDetail', await fixItem(response.data))
     })
     .catch(() => {

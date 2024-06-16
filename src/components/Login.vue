@@ -25,7 +25,7 @@
         <div class="text-warning" v-if="failedToLogin"><small>{{ errorText }}</small></div>
 
         <button class="btn btn-success btn-block w-100">Login</button>
-        <router-link to="/forgot" class="btn btn-dark btn-block mt-2 w-100">Forgot password?</router-link>
+        <!-- <router-link to="/forgot" class="btn btn-dark btn-block mt-2 w-100">Forgot password?</router-link> -->
 
         <div class="text-center mt-3">
             <span>Don't have an account? </span><router-link to="/signup" class="text-reset">Sign up</router-link>

@@ -332,7 +332,7 @@ import { parseISO, getTime } from 'date-fns'
                 let comment = {
                     userName: this.user.userName,
                     userLastName: this.user.userLastName,
-                    createdOn: Date.now()/1000,
+                    createdOn: Math.trunc(Date.now()/1000),
                     comment: this.newComment
                 }
                 if (comment.comment != ""){

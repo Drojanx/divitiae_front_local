@@ -143,9 +143,11 @@ import { fixItem } from '../router/index.js'
                     let value = {
                         relatedAppId: relation.appRelationId,
                         relatedAppName: relation.appRelationName,
+                        relatedWorkspaceId: relation.workspaceRelationId,
                         relatedItems: relation.relatedItems
                     }
                     let rel = {
+                        id: relation.id,
                         name: relation.name,
                         nameAsProperty: relation.nameAsProperty,
                         type: relation.type,
@@ -173,7 +175,7 @@ import { fixItem } from '../router/index.js'
                         const cetOffset = date.getTimezoneOffset() * -60;
                         const utcTimestamp = timestamp + cetOffset;
                         
-                        field.value = utcTimestamp;
+                        field.value = Math.trunc(utcTimestamp);
                     }
                 })
 
