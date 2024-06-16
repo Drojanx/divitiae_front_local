@@ -1,0 +1,1234 @@
+$ceneteredAppListWidth: 1640px;
+$neg: -1;
+#home, #environment, #environment-config {
+  width: 100%;
+  border-top: solid 2px black;
+  box-sizing: border-box;
+}
+
+#environmentChildrenSection {
+  margin: auto;
+  width: 98%;
+  gap: 1.5em;
+}
+
+#session {
+  margin-right: 4.5rem;
+  background-color: transparent;
+}
+
+#workspaceName {
+  height: 3rem;
+}
+
+@media screen and (max-width: 1850px){
+  #vpCentered {
+    width: 90vw !important;
+    /* margin-right: calc(-1140px/2)!important; */
+  }
+}
+
+@media screen and (max-width: 1725px){
+  #vpCentered {
+    /* width: 1240px !important; */
+    /* margin-right: calc(-1040px/2)!important; */
+  }
+}
+
+@media screen and (max-width: 1600px){
+  #vpCentered {
+    /* width: 1100px !important; */
+    /* margin-right: calc(-880px/2)!important; */
+
+  }
+}
+
+@media screen and (max-width: 1470px){
+  #vpCentered {
+    /* margin-right: calc(-1000px/2)!important; */
+  }
+}
+
+@media screen and (max-width: 1370px){
+  #vpCentered {
+    /* margin-right: calc(-1100px/2)!important; */
+  }
+}
+
+@media screen and (max-width: 1280px){
+  #vpCentered {
+    /* width: 950px !important;/*  */
+  }
+}
+
+@media screen and (max-width: 1145px){
+  #vpCentered {
+    /* width: 840px !important; */
+    /* margin-right: calc(-1000px/2)!important; */
+  }
+
+  #itemDetail{
+    margin-left: calc(#{$neg} * #{$ceneteredAppListWidth}/4.2) !important;
+  }
+
+  #item-activity{
+    display: none !important;
+  }
+
+  #item-activity-bar{
+    display: block !important;
+  }
+}
+
+
+@media screen and (max-width: 1040px){
+  #workspacesTabs{
+    display: grid !important;
+    grid-auto-flow: column;  
+    grid-gap: 10px;
+  }
+  .workspaceTab {
+    width: 100%;
+  }
+  #environmentChildrenSection {
+    flex-direction: column;
+    gap: 1em;
+  }
+  #environmentInfo {
+    margin: auto;
+    width: 90% !important;
+  }
+  #wsList {
+    width: 90% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  #vpCentered {
+    width: 100% !important;
+    position: static !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  #envName {
+    text-align: center !important;
+  }
+  #appScroll {
+    justify-content: start !important;
+  }
+  #session {
+    margin-right: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 600px){
+  #environmentChildrenSection {
+    max-width: 500px !important;
+    flex-direction: column !important;
+    gap: 1em !important;
+  }
+}
+
+@media screen and (max-width: 500px){
+  #environmentChildrenSection {
+    max-width: 400px !important;
+    flex-direction: column !important;
+    gap: 1em !important;
+  }
+
+  #environmentInfo {
+    width: 400px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  #vpCentered {
+    width: 400px !important;
+
+  }
+}
+
+@media screen and (max-width: 430px){
+  #environmentChildrenSection {
+    max-width: 370px !important;
+    flex-direction: column !important;
+    gap: 1em !important;
+  }
+  #wsList {
+    width: 370px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  #vpCentered {
+    width: 370px !important;
+
+  }
+}
+
+@media screen and (max-width: 376px){
+  #environmentChildrenSection {
+    max-width: 340px;
+    flex-direction: column;
+    gap: 1em;
+  }
+  #wsList {
+    width: 340px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  #vpCentered {
+    width: 340px !important;
+
+  }
+}
+
+#workspacesTabs {
+  flex-direction: column;
+}
+
+#ws-nav, #wsList, #homeContent, #appContent, #configContent{
+  flex-wrap: wrap;
+  border-radius: .75rem;
+  /* box-shadow: rgba(0, 0, 0, 0.1) 6px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; */
+  box-shadow: 0px 0px 17px 5px rgba(187, 187, 187, 0.27);
+  p {
+    font-weight: bold;
+  }
+}
+
+#wsList {
+  margin-left: 0;
+  width: 258px;
+}
+
+$viewW: 100vw;
+
+#vpCentered {
+  height: calc(100vh - 13rem);
+  /* position: absolute; */
+  /* right: 50%; */
+  width: $ceneteredAppListWidth;
+  margin:0 auto;
+  padding-right: 0;
+  padding-left: 0;
+  /* margin-right: calc(-1440px/2); */
+}
+
+#workspaceContent {
+  height: 100%;
+  width: 90%;
+  margin: auto;
+}
+
+#appContent {
+  height: calc(100% - 6rem);
+}
+
+#appScroll {
+  a {
+    flex: 1 0 auto;
+  }
+}
+
+.addElementsIcon {
+  font-size: 2.2em;
+  line-height: 57px;
+  color: $base-color;
+  margin: auto;
+  &:hover {
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+}
+
+.add-app-button {
+  border-radius: 0.25rem;
+  min-width: 5em;
+  font-size: 1.2rem;
+  background-color: $base-color;
+  border: 1px $border-base-color solid;
+  padding: 5px;
+}
+
+.fa-square-plus {
+  path {
+    stroke-width: 20;
+    stroke: $border-base-color
+  }
+}
+
+.workspaceTab, .appTab {
+  text-align: center;
+  border-radius: 0.25rem;
+  width: 2em;
+/*   border: solid 2px $border-base-color;
+ */  a {
+    display: block; /* Hace que el enlace sea un elemento en bloque */
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: 100%; /* Ocupa todo el alto del contenedor */
+    text-align: center; /* Centrar el texto horizontalmente si es necesario */
+    text-decoration: none; /* Quitar subrayado por defecto */
+    background-color: transparent; /* Fondo transparente */
+    transition: background-color 0.3s ease; /* Transición de color de fondo al pasar el ratón */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: bold;
+  }
+}
+
+.add-app-tab{
+  background-color: $base-color;
+  text-align: center;
+  border-radius: 0.25rem;
+  border: solid 2px $border-base-color;
+  a {
+    display: block; /* Hace que el enlace sea un elemento en bloque */
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: 100%; /* Ocupa todo el alto del contenedor */
+    text-align: center; /* Centrar el texto horizontalmente si es necesario */
+    text-decoration: none; /* Quitar subrayado por defecto */
+    color: #0074d9; /* Color del texto del enlace */
+    background-color: transparent; /* Fondo transparente */
+    transition: background-color 0.3s ease; /* Transición de color de fondo al pasar el ratón */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: $font-color;
+    font-weight: bold;
+    font-size: 12px;
+  }
+}
+
+.workspaceTab {
+  max-width: 15em;
+}
+
+#appScroll{
+  .appTab {
+    /* flex: 1 0 auto; */
+    align-self: auto;
+    max-height: 50px;
+    a {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+  max-width: 80%;
+}
+
+
+#itemDetailSection, #newAppFormSection, #newUserFormSection {
+  background-color: rgba(228, 228, 228, 0.61);
+  backdrop-filter: blur(5px);
+  position: absolute;
+  margin:0 auto;
+  top: 3.5rem; 
+  bottom: 0px;
+  left: 0px;
+  width: 100vw;
+  padding-top: 100px;
+  z-index: 40;
+}
+
+$fields-name-column-color: rgb(246, 247, 249);
+$fields-name-column-width: 20%;
+
+#newAppForm, #newUserForm {
+  background: linear-gradient(
+    to right,
+    $fields-name-column-color 0%,
+    $fields-name-column-color $fields-name-column-width,
+    white $fields-name-column-width,
+    white 100%
+  );
+  width: calc($ceneteredAppListWidth/1.5);
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  margin-left: calc(#{$neg} * #{$ceneteredAppListWidth}/3);
+  bottom: 100px;
+  overflow: hidden;
+  overflow-y: auto;
+  h1 {
+
+    border-bottom: 0.1em solid black;
+  }
+}
+
+#itemDetail {
+  background: linear-gradient(
+    to right,
+    $fields-name-column-color 0%,
+    $fields-name-column-color $fields-name-column-width,
+    white $fields-name-column-width,
+    white 100%
+  );
+  width: calc(($ceneteredAppListWidth/1.5)/1.4);
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  margin-left: calc(#{$neg} * #{$ceneteredAppListWidth}/3);
+  bottom: 100px;
+  overflow: hidden;
+  overflow-y: auto;
+  h1 {
+    width: calc(100% - $fields-name-column-width);
+    /* margin-left: $fields-name-column-width; */
+    padding-left: 1.5rem;
+    padding-right: 0.5rem;
+    border-bottom: 0.1em solid black;
+    padding-bottom: 0.25em;
+  }
+}
+
+#item-descriptive-name{
+  input{
+    padding-right: 0.5rem !important;
+    padding-left: 0.5rem !important;
+    height: 2.5rem;
+    margin-top: 0.25rem;
+    width: 100% important;
+    border-radius: 0.25rem;
+    &:focus{
+      outline: none;
+    }
+  }
+}
+
+#user-name{
+  padding-right: 0.5rem !important;
+  padding-left: 0.5rem !important;
+  height: 2.5rem;
+  margin-top: 0.25rem;
+  width: 100% important;
+}
+
+#item-activity {
+  width: calc(($ceneteredAppListWidth/1.5)/3.7);
+  position: absolute;
+  top: 50px;
+  right: 50%;
+  margin-right: calc(#{$neg} * #{$ceneteredAppListWidth}/3);
+  bottom: 100px;
+  overflow: hidden;
+  overflow-y: auto;
+  h1 {
+    width: calc(100% - $fields-name-column-width);
+    margin-left: $fields-name-column-width;
+    padding-left: 1.5rem;
+    padding-right: 0.5rem;
+    border-bottom: 0.1em solid black;
+    padding-bottom: 0.25em;
+  }
+  #log-box {
+    background-color: $fields-name-column-color;
+    height: 9rem;
+  }
+}
+
+#newUserForm {
+  width: calc($ceneteredAppListWidth/2);
+  margin-left: calc(#{$neg} * #{$ceneteredAppListWidth}/4);
+}
+#itemDetailNav {
+  color:black; 
+  font-size: 1.33em;
+  text-align: end;
+  line-height: 0.3em;
+  svg {
+    padding-right: 0.6em;
+    padding-left: 0.6em;
+    padding-top: 0.5em;
+    cursor: pointer;
+  }
+}
+
+.item-detail-key, .new-app-field-name {
+  width: 20%;
+  padding-right: 1.5rem;
+  padding-left: .5rem;
+  font-weight: bold;
+  white-space: initial;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  font-size: 13px;
+}
+
+.item-detail-value, .new-app-field-type {
+  padding-left: 1.5rem;
+  font-weight: 400 !important;
+  align-self: center;
+  white-space: initial;
+  overflow-wrap: break-word;
+  padding-right: 1.5rem;
+
+  select {
+    width: 100%;
+    padding: .5rem 1.5rem;
+    border-radius: 10px;
+    option {
+      color: #64748b;
+      font-weight: 700 !important;
+    }
+  }
+}
+
+#relatedItems {
+  h5{
+    margin-top: 1em;
+    margin-left: $fields-name-column-width;
+    font-weight: 200 !important;
+    padding-left: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 0.3em solid rgb(246, 247, 249);
+  }
+}
+
+#newAppForm, #newUserForm {
+  #newAppName {
+    font-size: 2em;
+    width: calc(100% - $fields-name-column-width);
+    margin-left: $fields-name-column-width;
+    padding-left: 1.5rem;
+    outline: none;
+    border: none;
+    border-bottom: 0.1em solid black;
+    padding-bottom: 0.25em;
+  }
+  .newAppField, .newAppHeaders {
+    margin: 0.5em 0;
+    input, select {
+      border: none;
+    }
+    input {
+      background-color: transparent;
+    }
+    select {
+      background-color: $fields-name-column-color;
+      color: #64748b;
+      font-weight: 700 !important;
+    }
+    select:focus, input:focus {
+      outline:none;
+    }
+    select:hover {
+      cursor: pointer;
+    }
+  }
+  #addField {
+    width: $fields-name-column-width;
+    text-align: end;
+    svg {
+      margin-right: $fields-name-column-width;
+      cursor: pointer;
+    }
+  }
+}
+
+#newAppForm {
+  .newAppField{
+    max-height: 5rem;
+    
+  }
+}
+
+.new-app-field-animation {
+  animation: fade-in 1s ;
+}
+
+.remove-new-app-field {
+  transition: all .5s ease-in-out;
+}
+
+
+$incorrect-value-bg: rgb(255, 111, 111);
+$incorrect-value-border: 2px solid red;
+
+.newAppIncorrectFieldName {
+
+  border: $incorrect-value-border !important;
+  background-color: $incorrect-value-bg !important;
+
+  &::placeholder {
+    
+    color: white;
+  }
+  
+}
+
+.newAppIncorrectFieldType {
+  border: $incorrect-value-border !important;
+  background-color: $incorrect-value-bg !important;
+  color: white;
+}
+
+#createAppButton {
+  margin-left: $fields-name-column-width;
+
+  button {
+    width: 50%;
+    margin: 0 auto;
+    border: solid 2px $border-base-color;
+    border-radius: .25em;
+    background-color: $base-color;
+    color: white;
+  }
+
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    margin-left: 100%;
+    height: 2.5rem;
+  }
+  to {
+    min-height: 2.5rem;
+    opacity: 1;
+    margin-left: 0%;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    margin-left: 0%;
+    min-height: 2.5rem;
+  }
+  to {
+    height: 2.5rem;
+    opacity: 0;
+    margin-left: 100%;
+  }
+}
+
+@keyframes fade-out-x2 {
+  from {
+    opacity: 1;
+    margin-left: 0%;
+    min-height: 5rem;
+  }
+  to {
+    height: 5rem;
+    opacity: 0;
+    margin-left: 100%;
+  }
+}
+
+.fa-circle-minus:hover {
+  cursor: pointer;
+}
+
+#appItemsTable, #usersList {
+  font-size: small;
+  tr {
+    max-height: 1em !important;
+    td {
+      max-width: 4em;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      
+    }
+  }
+}
+
+.cell{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 0.75rem 1rem;
+}
+
+.taskCell{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#appItemsTable {
+  tr:hover {
+    cursor: pointer;
+  }
+  th{
+    background-color: transparent;
+   
+  }
+  thead {
+    position: sticky;
+    top: 0;
+  }
+}
+
+#usersList {
+  width: 90%;
+  margin: auto;
+  border-right: 1px solid #00000030;
+  border-left: 1px solid #00000030;
+}
+
+.fa-pen {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#add-item-button {
+  text-align: center;
+  span {
+    background-color: $base-color;
+    line-height: 100%;
+    font-size: 17px;
+
+  }
+  svg {
+    color: $base-color;
+    background-color: white;
+  }
+  .addElementsIcon {
+    font-size: 2.2em;
+    line-height: 57px;
+    color: $base-color;
+    margin: auto;
+    &:hover {
+      cursor: pointer;
+      font-weight: bold;
+    }
+    
+  }
+}
+
+.buttons {
+  border: 2px #ffc107 solid;
+}
+
+.relation-field-header {
+  background-color: $base-lighter-color;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+
+.relationFieldCard, .taskUsersCard {
+  background-color: $base-light-color;
+  margin: 0;
+  border-radius: 0.25rem;
+  border: solid 2px $border-base-color;
+  transition: transform .2s;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 30%;
+  text-align: center;
+  p {
+    padding: 0 1.25rem 0 1.25rem;
+    font-weight: normal !important;
+    font-size: smaller;
+    transition: all .2s;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  span {
+    display: block;
+    padding: .5rem 1.25rem .5rem 1.25rem;
+    transition: all .2s;
+    border-bottom: 2px solid $border-base-color;
+    width: 100%;
+  }
+  
+}
+.relationFieldCard{
+
+  &:hover {
+    color: white;
+    cursor: pointer;
+    transform: scale(1.05);
+    span {
+      color: white !important;
+    }
+    p {
+      color: white !important;
+    }
+  }
+}
+
+
+.fa-wrench {
+  cursor: pointer;
+}
+
+#configContent {
+  width: 80%;
+  margin: auto;
+  height: 100%;
+}
+
+#configInfo {
+  margin: auto;
+  text-align: center;
+  width: 70%;
+  /* input {
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+    padding-left: 0.7rem;
+     &:focus {
+      outline: none;
+      background-color: $base-color;
+      color: white;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border-bottom: 1px solid black;
+
+    } 
+  } */
+}
+
+.effect-9, .effect-1{width: 100%; border: none; border-bottom: 1px solid #ccc; padding: 7px 14px 9px; transition: 0.4s; outline: none; color: rgba(0, 0, 0, 0.726)}
+.effect-9:focus {outline: none}
+.effect-9 ~ .focus-border:before,
+.effect-9 ~ .focus-border:after{content: ""; position: absolute; top: 0; right: 0; width: 0; height: 2.5px; background-color: $base-color; transition: 0.2s; transition-delay: 0.2s;}
+.effect-9 ~ .focus-border:after{top: auto; bottom: 0; right: auto; left: 0; transition-delay: 0.6s;}
+.effect-9 ~ .focus-border i:before,
+.effect-9 ~ .focus-border i:after{content: ""; position: absolute; top: 0; left: 0; width: 2.5px; height: 0; background-color: $base-color; transition: 0.2s;}
+.effect-9 ~ .focus-border i:after{left: auto; right: 0; top: auto; bottom: 0; transition-delay: 0.4s;}
+.effect-9:focus ~ .focus-border:before,
+.effect-9:focus ~ .focus-border:after{width: 100%; transition: 0.2s; transition-delay: 0.6s;}
+.effect-9:focus ~ .focus-border:after{transition-delay: 0.2s;}
+.effect-9:focus ~ .focus-border i:before,
+.effect-9:focus ~ .focus-border i:after{height: 100%; transition: 0.2s;}
+.effect-9:focus ~ .focus-border i:after{transition-delay: 0.4s;}
+
+
+.effect-1:focus {outline: none; padding: 7px 14px 9px;}
+.effect-1 ~ .focus-border{position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: rgba(255, 193, 7); transition: 0.4s;}
+.effect-1:focus ~ .focus-border{width: 100%; transition: 0.4s;}
+
+#configInfo {
+  .col-3 {
+    width: 60%; margin: 5px auto; 
+  }
+  .effect-1 {
+    text-align: center; 
+  }
+}
+
+.item-detail-row{
+  transition: all .2s;
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(246, 247, 249);
+  }
+}
+
+.item-detail-value  {
+  transition: all .2s;
+  font-size: 13px;
+  input, textarea {
+    border: none;
+    padding: 3px 6px;
+    border-radius: 6px;
+    &:focus {
+      outline: none;
+    }
+  }
+  textarea {
+    width: 300px;
+    height: 30px;
+    resize: none;
+    overflow: hidden;
+    background-color: transparent;
+    background-color: white;
+    margin-top: 6px;
+  }
+  .switch {
+    margin-left: 3px;
+  }
+  
+}
+
+.text {
+  input{
+    width: 100%;
+  }
+}
+
+.col-3{float: none; position: relative;}
+
+.thead-greenish {
+  background-color: $base-color;
+  color: $font-color;
+}
+
+.effect-22, 
+.effect-23, 
+.effect-24{border: 0; padding: 7px 15px; border: 1px solid #ccc; position: relative; background: transparent;}
+
+.effect-22 ~ .focus-bg{position: absolute; left: 0; top: 0; width: 0; height: 100%; background-color: transparent; transition: 0.4s; z-index: -1;}
+.effect-22:focus ~ .focus-bg, 
+.has-content.effect-22 ~ .focus-bg{transition: 0.4s; width: 100%; background-color: #ededed;}
+.effect-22 ~ label{position: absolute; left: 14px; width: 100%; top: 10px; color: #aaa; transition: 0.3s; z-index: -1; letter-spacing: 0.5px;}
+.effect-22:focus ~ label, .has-content.effect-22 ~ label{top: -18px; left: 0; font-size: 12px; color: #333; transition: 0.3s;}
+
+.effect-23 ~ .focus-bg:before,
+.effect-23 ~ .focus-bg:after{content: ""; position: absolute; left: 0; top: 0; width: 0; height: 0; background-color: #ededed; transition: 0.3s; z-index: -1;}
+.effect-23:focus ~ .focus-bg:before,
+.has-content.effect-23 ~ .focus-bg:before{transition: 0.3s; width: 50%; height: 100%;}
+.effect-23 ~ .focus-bg:after{left: auto; right: 0; top: auto; bottom: 0;}
+.effect-23:focus ~ .focus-bg:after,
+.has-content.effect-23 ~ .focus-bg:after{transition: 0.3s; width: 50%; height: 100%;}
+.effect-23 ~ label{position: absolute; left: 14px; width: 100%; top: 10px; color: #aaa; transition: 0.3s; z-index: -1; letter-spacing: 0.5px;}
+.effect-23:focus ~ label, .has-content.effect-23 ~ label{top: -18px; left: 0; font-size: 12px; color: #333; transition: 0.3s;}
+
+#newEnvironment {
+
+  .form-group {
+    margin: auto;
+    position: relative;
+    width: 30%;
+    height: 50px;
+    border-bottom: 2px solid black;
+    margin-bottom: 10px;
+    label {
+      position: absolute;
+      top: 50% !important;
+      left: 5px;
+      transform: translateY(-50%);
+      pointer-events: none;
+      transition: 0.5s;
+      font-size: 12px;
+    }
+  
+    input {
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 1em;
+      font-weight: 600;
+      padding: 0 5px;
+    }
+
+    .text-danger {
+      font-size: 12px;
+    }
+  }
+  .form-group input:focus~label,
+  .form-group input:valid~label {
+    top: -1px !important;
+    background-color: white;
+    z-index: 2;
+    padding: 0 7px;
+  }
+
+  .form-group:focus-within {
+    border: 2px solid black;
+  }
+
+}
+
+.success-field-change {
+  animation: append-animate-success 2s linear;
+}
+
+.fail-field-change {
+  animation: append-animate-fail 2s linear;
+}
+
+@keyframes append-animate-success {
+	0% {
+		background-color: $base-light-color;
+	}
+  50% {
+		background-color: $base-light-color;
+	}
+	100% {
+		background-color: transparent;
+	}
+}
+
+@keyframes append-animate-fail {
+	0% {
+		background-color: rgb(255, 103, 103);
+	}
+  50% {
+		background-color: rgb(255, 103, 103);
+	}
+	100% {
+		background-color: transparent;
+	}
+}
+
+
+#page-not-found {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(246, 247, 249);
+  border-top: solid 2px black;
+}
+
+.related-items-grid {
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-rows: 100px;
+  grid-auto-rows: 100px;
+  grid-template-columns: repeat(auto-fit, minmax(20%, 30%));
+  gap: 10px;
+  font-size: 13px;
+  a{
+    text-decoration: none;
+    color: black;
+  }
+  .relationFieldCard {
+    width: 100%;
+  }
+}
+
+.my-notification {
+  margin-right: 50px; 
+  margin-bottom: 30px; 
+  font-size: 15rem;
+}
+
+.notification-title {
+  font-size: 20px;
+}
+
+.notification-content {
+  font-size: 15px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: #F5F5F5;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: $base-color;
+}
+
+.p-datatable-table{
+  background-color: transparent;
+  color: red !important;
+  tr {
+      background-color: transparent;
+      border-bottom: 1px black solid;
+      transition: color 0.25s ease-in-out;
+    td {
+      background-color: transparent;
+      max-width: 12em;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    th {
+          transition: all .5s ease-in-out !important;
+          background-color: #242424;
+    }
+  }
+  
+}
+
+.table-light {
+  height: calc(100% - 4rem);
+  overflow: hidden;
+  .select-item {
+    background-color: $base-lighter-color !important;
+    transition: all .35s ease-in-out !important;
+  }
+  .p-datatable-wrapper {
+    border-top-left-radius: 15px;
+    overflow: scroll;
+    height: 100%;
+    .p-datatable-table {
+      thead {
+        position: sticky;
+        top: 0;
+        th {
+          background-color: #FBFBFE;
+          transition: all .35s ease-in-out !important;
+          position: sticky;
+          top: 0;
+          color: black;
+        }
+      }
+      tbody{
+        tr {
+          color: black;  
+          &:hover {
+            cursor: pointer;
+            background-color: #ededed;
+          }
+        }
+      }
+    }
+  }
+}
+
+.table-dark {
+  height: calc(100% - 4rem);
+  overflow: hidden;
+  .select-item {
+    background-color: $sec-dark-color !important;
+    transition: all .35s ease-in-out !important;
+  }
+  .p-datatable-wrapper {
+    border-top-left-radius: 15px;
+    overflow: scroll;
+    height: 100%;
+    .p-datatable-table {
+      overflow: scroll;
+      thead {
+        position: sticky;
+        top: 0;
+        th {
+          color: white;
+          transition: all .35s ease-in-out !important;
+          position: sticky;
+          top: 0;
+        }
+      }
+      tbody {
+        tr {
+          color: white;
+          &:hover {
+            cursor: pointer;
+            background-color: #414141;
+          }
+        }        
+      }
+    }
+  }
+}
+
+.sticky-header {
+  position: stikcy;
+  top: 0;
+  z-index: 1100;
+}
+
+
+.p-progress-spinner-circle {
+  stroke: #FFC107 !important;
+}
+
+
+.p-progress-spinner::before{
+  padding: 0 !important; 
+}
+
+#item-activity-bar{
+  display: none;
+}
+
+.activity-bg{
+  background: linear-gradient(to right, rgb(246, 247, 249) 0%, rgb(246, 247, 249) 40%, white 40%, white 100%);
+}
+
+.p-cascadeselect-panel {
+  width: 200px !important;
+  left: 45vw;
+}
+
+.p-chips-multiple-container{
+  input{
+    display: none;
+  }
+}
+#pendingTasks{
+  max-height: calc(30vh);
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+#taskComments{
+  background: linear-gradient(to right, rgb(246, 247, 249) 0%, rgb(246, 247, 249) 30%, white 30%, white 100%);
+  overflow: auto;
+}
+
+#appSearch{
+  .vs__dropdown-toggle{
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: bold;
+    height: 2.5rem;
+  }
+}
+
+#searchButton{
+  transition: all 0.5s;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.5s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(-20%);
+  opacity: 0;
+}
+
+#yourInformation{
+
+  .form-group {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+  
+    label {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      transform: translateY(-40%);
+      pointer-events: none;
+    }
+  
+    input {
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      outline: none;
+      font-size: 1em;
+    }
+  
+    .emailIcon {
+      position: absolute;
+      right: 21px;
+      font-size: 1.2em;
+      line-height: 45px;
+    }
+  
+  }
+  
+  .form-group input:focus~label,
+  .form-group input:not(:placeholder-shown)~label {
+    top: -5px;
+  }
+
+  
+}

@@ -1,0 +1,51 @@
+@import url('https://api.fontshare.com/v2/css?f[]=clash-grotesk@200,700,400,600,300,1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+
+body {
+    font-family: 'Manrope', sans-serif;
+}
+
+#myApp {
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #000000;
+    background: linear-gradient(180deg, $base-color 0%, rgba(0, 212, 255, 0.2356880252) 100%);
+}
+
+#rootSection {
+    flex-grow: 1;
+}
+
+#info {
+    flex-grow: 1;
+    background-color: white;
+}
+
+.aboutitem {
+    margin-top: -10rem;
+    pointer-events: none;
+    background-color: white;
+}
+
+.btn {
+    font-weight: bold;
+
+}
+
+.btn-warning {
+    color: #6C757D;
+}
+
+.root {
+    min-height: 100vh;
+    line-height: 1.8;
+    background-image: url(./assets/people-g51cb86f5e_1920.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    color: #2c3e50;
+    overflow: hidden; 
+  }

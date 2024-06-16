@@ -1,0 +1,168 @@
+//ANTES ERA SOLO "FORM"
+#logInForm, #signUpForm, #activate-container {
+    margin: auto;
+    margin-top: 3rem;
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+    background-color: rgba(255, 255, 255, .25);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(255, 255, 255, .5);
+    font-weight: bold;
+    h2 {
+      color: rgb(37, 58, 71) !important;
+    }
+
+  }
+  
+.line-break{
+  width: 100%;
+}
+
+#accessLogo {
+  margin: auto;
+
+  img {
+    max-width: 3.5rem;
+    margin: auto;
+    display: block;
+  }
+}
+
+#activate-container{
+  width: 350px;
+}
+
+
+#logInForm{
+  max-width: 440px;
+
+  .form-group {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid black;
+    margin: 30px 0;
+  
+    label {
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      transform: translateY(-50%);
+      pointer-events: none;
+      transition: 0.5s;
+      color: rgb(37, 58, 71) !important;
+    }
+  
+    input {
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 1em;
+      font-weight: 600;
+      color: rgb(37, 58, 71) !important;
+    }
+  
+    .accessIcon {
+      position: absolute;
+      right: 8px;
+      font-size: 1.2em;
+      line-height: 57px;
+    }
+  
+  }
+  
+  .form-group input:focus~label,
+  .form-group input:not(:placeholder-shown)~label {
+    top: -5px;
+  }
+
+  
+}
+
+#signUpForm{
+  max-width: 580px;
+
+  #signUpFields {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 4%;
+
+    .form-group {
+      position: relative;
+      width: 48%;
+      height: 50px;
+      border-bottom: 2px solid black;
+      margin: 15px 0;
+    
+      label {
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+        pointer-events: none;
+        transition: 0.5s;
+        color: rgb(37, 58, 71) !important;
+      }
+    
+      input {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 1em;
+        font-weight: 600;
+        color: rgb(37, 58, 71) !important;
+      }
+
+      .text-danger {
+        font-size: 12px;
+      }
+    }
+    .form-group input:focus~label,
+    .form-group input:not(:placeholder-shown)~label {
+      top: -5px;
+    }
+
+    .sample-generate {
+      width: 48%;
+      height: 70px;
+      font-size: 13px;
+      color: white;
+      
+      text-align: center;
+      
+      margin: 15px 0;
+      span {
+        color: white !important;
+      }
+      label {
+        margin-top: 0.5rem;
+      }
+      .visible-sample-generate{
+        padding: 5px 0;
+        border: 1px solid white;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+#googleLogIn {
+  background-color: rgba(255, 255, 255, 0.829);
+  border-radius: 15px;
+}
+
+#edit-user {
+  :hover {
+    cursor: pointer;
+  }
+}
+
+.log-in-with-google-button {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTcuNiA5LjJsLS4xLTEuOEg5djMuNGg0LjhDMTMuNiAxMiAxMyAxMyAxMiAxMy42djIuMmgzYTguOCA4LjggMCAwIDAgMi42LTYuNnoiIGZpbGw9IiM0Mjg1RjQiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGQ9Ik05IDE4YzIuNCAwIDQuNS0uOCA2LTIuMmwtMy0yLjJhNS40IDUuNCAwIDAgMS04LTIuOUgxVjEzYTkgOSAwIDAgMCA4IDV6IiBmaWxsPSIjMzRBODUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNNCAxMC43YTUuNCA1LjQgMCAwIDEgMC0zLjRWNUgxYTkgOSAwIDAgMCAwIDhsMy0yLjN6IiBmaWxsPSIjRkJCQzA1IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNOSAzLjZjMS4zIDAgMi41LjQgMy40IDEuM0wxNSAyLjNBOSA5IDAgMCAwIDEgNWwzIDIuNGE1LjQgNS40IDAgMCAxIDUtMy43eiIgZmlsbD0iI0VBNDMzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTAgMGgxOHYxOEgweiIvPjwvZz48L3N2Zz4=);
+  background-repeat: no-repeat;
+  background-position: 12px 8px;
+}

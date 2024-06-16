@@ -1,0 +1,210 @@
+$base-color: #26cf91;
+$base-light-color: #3dffb8;
+$base-semi-dark-color: #37d199;
+//$base-dark-color: #1fa876;
+$base-dark-color: #1fa876;
+$sec-dark-color: #00B575;
+$base-lighter-color: #c7ffeb;
+$border-base-color: rgb(0, 185, 117);
+$font-color: #010104;
+$warning-color: #FFC107;
+$warning-border-color: #dda600;
+
+$navbar-padding-y: 0;
+$navbar-light-color: rgba(1, 56, 112, 1) !default;
+$navbar-light-hover-color: rgba(1, 56, 112, .7) !default;
+$navbar-light-active-color: rgba(1, 56, 112, .9) !default;
+$navbar-light-disabled-color: rgba(1, 56, 112, .3) !default;
+$navbar-brand-font-size: 1rem * 2;
+
+.base-b-light {
+    background-color: $base-color;
+    transition: color .35s ease-in-out !important;
+}
+.base-b-dark {
+    background-color: $base-dark-color;
+    transition: all .35s ease-in-out !important;
+}
+.bsec-light {
+    background-color: $base-lighter-color !important;
+    transition: all .35s ease-in-out !important;
+}
+.bsec-dark {
+    background-color: $sec-dark-color !important;
+    transition: all .35s ease-in-out !important;
+}
+.b-accent-light{
+    background-color: $base-light-color;
+    transition: all .35s ease-in-out !important;
+}
+.b-accent-dark{
+    background-color: $base-semi-dark-color;
+    transition: all .35s ease-in-out !important;
+}
+.txt-light {
+    color: #010104;
+    //transition: background-color 1s ease-in-out !important;
+    transition: all .35s ease-in-out !important;
+}
+.txt-dark {
+    color: #fbfbfe !important;
+    transition: all .35s ease-in-out !important;
+}
+.b-warning {
+    background-color: $warning-color;
+    transition: all .35s ease-in-out !important;
+}
+.b-light {
+    background-color: #fbfbfe;
+    transition: all .35s ease-in-out !important;
+}
+.b-dark {
+    background-color: #242424;
+    transition: all .35s ease-in-out !important;
+    .p-dialog-content {
+        background-color: #242424;
+        transition: all .35s ease-in-out !important;
+        color: #fbfbfe;
+    }
+    .p-dialog-header {
+        background-color: #242424;
+        transition: all .35s ease-in-out !important;
+        color: #fbfbfe;
+    }
+}
+.b-prim {
+    background-color: #26cf91;
+    transition: all .2s ease-in-out !important;
+}
+.hover {
+    transition: all .2s ease-in;
+}
+.hover-bsec-light:hover {
+    background-color: $base-lighter-color;
+}
+.hover-bsec-dark:hover {
+    background-color: $base-light-color;
+    color: black;
+}
+
+
+
+
+.w-95 {
+    width: 95%;
+}
+
+.w-90 {
+    width: 90%;
+}
+.w-80 {
+    width: 80% !important;
+}
+.w-75 {
+    width: 75%;
+}
+.w-70 {
+    width: 70% !important;
+}
+.w-60 {
+    width: 60% !important;
+}
+.w-33 {
+    width: 33%;
+}
+.w-30 {
+    width: 30% !important;
+}
+.w-43 {
+    width: 43% !important;
+}
+.w-25 {
+    width: 25%;
+}
+.pw-5 {
+    width: 5%;
+}
+.pw-10 {
+    width: 10%;
+}
+.pw-20 {
+    width: 20%;
+}
+.pw-25 {
+    width: 25%;
+}
+.pw-30 {
+    width: 30%;
+}
+.pw-35 {
+    width: 35%;
+}
+.pw-40 {
+    width: 40%;
+}
+.pw-50 {
+    width: 50%;
+}
+.pw-60 {
+    width: 60%;
+}
+.pw-65 {
+    width: 65%;
+}
+.pw-70 {
+    width: 70%;
+}
+.pw-75 {
+    width: 75%;
+}
+.pw-80 {
+    width: 80%;
+}
+.pw-85 {
+    width: 85%;
+}
+.w-15 {
+    width: 15%;
+}
+.ph-80{
+    height: 80%;
+}
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 4.5,
+  7: $spacer * 6,
+  8: $spacer * 7.5,
+  9: $spacer * 9
+) !default;
+
+.auth-wrapper {
+    display: flex;
+    flex-grow: 1;
+}
+.auth-inner {
+    display: flex;
+    flex-grow: 1;
+}
+
+.thead-dark {
+    background-color: black;
+    color: white;
+}
+
+// import to set changes
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "./assets/scss/general.scss";
+@import "./assets/scss/root.scss";
+@import "./assets/scss/access.scss";
+@import "./assets/scss/app.scss";
+@import "./assets/scss/dropdown.scss";
+@import "./assets/scss/transitions.scss";
+@import "./assets/scss/icons.scss";
+
+

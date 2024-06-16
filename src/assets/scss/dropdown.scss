@@ -1,0 +1,156 @@
+#appDropdowns{
+  width: 98%;
+  height: 3rem;
+}
+
+/* Style The Dropdown Button */
+.dropdown{
+  border-top: solid 2px transparent;
+  width: 258px;
+}
+
+#environmentspaceDrop{
+  background-color:  rgb(26, 226, 156);
+  border: solid 2px black;
+  border-top: solid 2px rgb(26, 226, 156);
+  margin-top: -3.2px;
+  width: 100%;
+  color: $font-color;
+}
+
+#workspaceDrop{
+  background-color: white;
+}
+
+.dropbtn {
+  min-width: 160px;
+  box-sizing: border-box;
+  font-weight: bold;
+  border: none;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  cursor: pointer;
+  img {
+    max-height: 1.7rem;
+  }
+  transition: 0.7s all ease, border-top 0s 0.7s;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  border: solid 2px white;
+  border-right: transparent;
+  border-left: transparent;
+  
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  transition: 0.7s all ease, border 0s;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  padding: 6px 0;
+  opacity: 0;
+  display: none;
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  min-width: 160px;
+  z-index: 1;
+  box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+  border-radius: .25rem;
+  transition: 0.7s all ease;
+  font-size: 0.8125rem;
+}
+
+.notHidden {
+    display: block;
+    opacity: 1;
+    -webkit-animation: fadeInFromNone 0.5s ease-in-out;
+    -moz-animation: fadeInFromNone 0.5s ease-in-out;
+    -o-animation: fadeInFromNone 0.5s ease-in-out;
+    animation: fadeInFromNone 0.5s ease-in-out;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 3px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+
+
+@-webkit-keyframes fadeInFromNone {
+  0% {
+      display: none;
+      opacity: 0;
+  }
+
+  1% {
+      display: block;
+      opacity: 0;
+  }
+
+  100% {
+      display: block;
+      opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeInFromNone {
+  0% {
+      display: none;
+      opacity: 0;
+  }
+
+  1% {
+      display: block;
+      opacity: 0;
+  }
+
+  100% {
+      display: block;
+      opacity: 1;
+  }
+}
+
+@-o-keyframes fadeInFromNone {
+  0% {
+      display: none;
+      opacity: 0;
+  }
+
+  1% {
+      display: block;
+      opacity: 0;
+  }
+
+  100% {
+      display: block;
+      opacity: 1;
+  }
+}
+
+@keyframes fadeInFromNone {
+  0% {
+      display: none;
+      opacity: 0;
+  }
+
+  1% {
+      display: block;
+      opacity: 0;
+  }
+
+  100% {
+      display: block;
+      opacity: 1;
+  }
+}
