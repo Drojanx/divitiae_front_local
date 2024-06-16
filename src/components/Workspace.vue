@@ -50,7 +50,7 @@
             <router-view v-slot="{ Component }">
                 <component :is="Component" />
             </router-view>
-            <div id="homeContent" :class="'b-'+colorMode" class="container mt-4 py-4 px-3">
+            <div v-if="workspaceUrl" id="homeContent" :class="'b-'+colorMode" class="container mt-4 py-4 px-3">
                 <div id="newEnvironment" class="w-100 text-center">
                     <div id="" class="m-auto pw-70 px-3 pb-3 border-solid border-b-2 rounded">
                         <div class="flex justify-content-center">
@@ -131,6 +131,7 @@ import TaskDetail from '../components/TaskDetail.vue'
                 { name: 'Completed Tasks', value: true }
                 ],
                 finishedTasks: { name: 'Pending Tasks', value: false },
+                workspaceUrl: true
             }
         },
         components: {
@@ -149,6 +150,12 @@ import TaskDetail from '../components/TaskDetail.vue'
                 immediate: true,
                 handler(to, from) {
                     document.title = to.meta.title || `${this.stateWorkspace.workspaceName}`;
+                    
+                    if(this.$route.name == 'workspace'){
+                        this.workspaceUrl = true
+                    } else {
+                        this.workspaceUrl = false
+                    }
                 }
             }
         },
